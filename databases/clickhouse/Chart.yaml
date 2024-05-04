@@ -1,0 +1,9 @@
+apiVersion: v2
+name: clickhouse
+version: 1.0.0
+appVersion: 1.0.0
+description: This Chart deploys mailhog.
+dependencies:
+  - name: clickhouse
+    version: 24.4.1
+    repository: https​://charts.bitnami.com/bitnami 
