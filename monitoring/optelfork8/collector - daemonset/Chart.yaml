@@ -1,0 +1,10 @@
+apiVersion: v2
+name: opentelementry-collector
+version: 0.90.1
+appVersion: 0.90.0
+description: This Chart deploys clickhouse collector
+dependencies:
+  - name: opentelemetry-collector
+    version: 0.90.15
+    repository: https://codecentric.github.io/helm-charts
+
