@@ -1,16 +1,26 @@
+#apiVersion: v2
+#name: community-operator-crds
+#description: MongoDB Kubernetes Community Operator - CRDs
+#type: application
+#version: 0.9.0
+#appVersion: 0.9.0
+#kubeVersion: '>=1.16-0'
+#keywords:
+#- mongodb
+#- database
+#- nosql
+#icon: https://mongodb-images-new.s3.eu-west-1.amazonaws.com/leaf-green-dark.png
+#home: https://github.com/mongodb/mongodb-kubernetes-operator
+#maintainers:
+#-# name: MongoDB
+#  email: support@mongodb.com
+
 apiVersion: v2
 name: community-operator-crds
-description: MongoDB Kubernetes Community Operator - CRDs
-type: application
-version: 0.9.0
-appVersion: 0.9.0
-kubeVersion: '>=1.16-0'
-keywords:
-- mongodb
-- database
-- nosql
-icon: https://mongodb-images-new.s3.eu-west-1.amazonaws.com/leaf-green-dark.png
-home: https://github.com/mongodb/mongodb-kubernetes-operator
-maintainers:
-- name: MongoDB
-  email: support@mongodb.com
+version: 1.0.0
+appVersion: 1.0.0
+description: This Chart deploys mongodb operator
+dependencies:
+  - name: community-operator-crds
+    version: 0.9.0
+    repository: https://mongodb.github.io/helm-charts/
