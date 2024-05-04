@@ -1,0 +1,1 @@
+https://github.com/mongodb/helm-charts/tree/main/charts/community-operator-crds
