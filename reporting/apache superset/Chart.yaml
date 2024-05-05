@@ -1,0 +1,8 @@
+apiVersion: v2
+name: 
+version: 1.0.0
+description: This Chart deploys apache superset
+dependencies:
+  - name: superset
+    version: 4.0.0
+    repository: https://apache.github.io/superset
