@@ -1,0 +1,9 @@
+apiVersion: v2
+name: Zitadel
+version: 1.0.0
+AppVersion: 2.49.1
+description: This Chart deploys zitadel along with secure postgres via values
+dependencies:
+  - name: zitadel
+    version: 7.12.1
+    repository: https://falcosecurity.github.io/charts
