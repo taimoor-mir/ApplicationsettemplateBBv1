@@ -1,0 +1,9 @@
+apiVersion: v2
+name: apisix-ingress-controller
+version: 1.0.0
+AppVersion: 1.8.0
+description: This Chart deploys ingress-nginx.
+dependencies:
+  - name: apisix-ingress-controller
+    version: 0.14.0
+    repository: https://charts.apiseven.com
