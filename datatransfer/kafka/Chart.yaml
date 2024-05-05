@@ -1,0 +1,13 @@
+apiVersion: v2
+name: 
+version: 1.0.0
+AppVersion: 3.7.0
+description: This Chart deploys kafka and related
+dependencies:
+  - name: loki
+    version: 5.23.0
+    repository: oci://registry-1.docker.io/bitnamicharts
+    
+# https://github.com/bitnami/charts
+
+#https://github.com/bitnami/charts/blob/main/bitnami/kafka/Chart.yaml
