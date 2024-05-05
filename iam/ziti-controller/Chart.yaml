@@ -1,0 +1,9 @@
+apiVersion: v3
+name: ziti-controller
+version: 1.0.0
+#Appversion: 1.0.0
+description: This Chart deploys grafana.
+dependencies:
+  - name: ziti-controller
+    version: 1.0.0
+    repository: https://openziti.io/helm-charts/

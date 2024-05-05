@@ -1,0 +1,12 @@
+apiVersion: v2
+name: trust-manager
+version: 1.0.0
+#Appversion: 1.0.0
+description: This Chart deploys trust-manager for ziti controler
+dependencies:
+  - name: trust-manager
+    version: 0.4.0
+    repository: https://charts.jetstack.io
+
+#https://openziti.io/helm-charts/charts/ziti-controller/ requirements
+#https://github.com/cert-manager/trust-manager
