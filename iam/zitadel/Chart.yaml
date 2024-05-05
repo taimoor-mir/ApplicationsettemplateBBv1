@@ -6,4 +6,4 @@ description: This Chart deploys zitadel along with secure postgres via values
 dependencies:
   - name: zitadel
     version: 7.12.1
-    repository: https://falcosecurity.github.io/charts
+    repository: https://github.com/zitadel/zitadel-charts
