@@ -1,0 +1,9 @@
+apiVersion: v2
+name: ziti-console
+#version: 1.0.0
+Appversion: 3.1.0
+description: This Chart deploys grafana.
+dependencies:
+  - name: ziti-console
+    version: 0.5.2
+    repository: https://openziti.io/helm-charts/

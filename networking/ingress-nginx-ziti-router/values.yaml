@@ -34,3 +34,5 @@ linkListeners:
       annotations:
         kubernetes.io/ingress.allow-http: "false"
         nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+
+
