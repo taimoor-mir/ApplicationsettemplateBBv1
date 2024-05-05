@@ -1,0 +1,10 @@
+#https://github.com/openziti/helm-charts/blob/main/charts/ziti-host/Chart.yaml
+apiVersion: v2
+name: ziti-host
+#version: 1.0.0
+Appversion: 0.22.26
+description: This Chart deploys openziti host
+dependencies:
+  - name: ziti-host
+    version: 0.4.11
+    repository: https://openziti.io/helm-charts/

@@ -1,0 +1,9 @@
+apiVersion: v2
+name: ziti-edge-tunnel
+version: 1.0.0
+Appversion: 0.22.6
+description: This Chart deploys ziti edge tunnel 
+dependencies:
+  - name: ziti-edge-tunnel
+    version: 0.0.14
+    repository: https://openziti.io/helm-charts/
