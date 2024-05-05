@@ -1,11 +1,11 @@
 apiVersion: v2
 name: opentelemetry-operator
 version: 1.0.0
-#appVersion: 0.98.0
+appVersion: 0.98.0
 description: OpenTelemetry Operator Helm chart for Kubernetes
 dependencies:
   - name: opentelementry-operator
     version: 0.98.0
-    repository: https://codecentric.github.io/helm-charts
+    repository: https://open-telemetry.github.io/opentelemetry-helm-charts
 
 #https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-operator/Chart.yaml
