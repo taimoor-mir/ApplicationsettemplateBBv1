@@ -1,0 +1,9 @@
+apiVersion: v2
+name: postgresql
+version: 1.0.0
+appVersion: 1.0.0
+description: This Chart deploys Postgres for Superset.
+dependencies:
+  - name: postgresql
+    version: 15.5.17
+    repository: https​://charts.bitnami.com/bitnami

@@ -1,0 +1,9 @@
+apiVersion: v2
+name: zookeeper
+version: 1.0.0
+appVersion: 1.0.0
+description: This Chart deploys ZooKeeper.
+dependencies:
+  - name: zookeeper
+    version: 13.4.8
+    repository: https​://charts.bitnami.com/bitnami
