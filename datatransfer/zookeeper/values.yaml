@@ -62,13 +62,19 @@ jvmFlags: ""
 dataLogDir: ""
 configuration: ""
 existingConfigmap: ""
-extraEnvVars: 
+extraEnvVars:
+  - name: ZOOKEEPER_CLIENT_PORT
+    value: "2181"
+  - name: ZOOKEEPER_TICK_TIME
+    value: "2000"
   - name: KAFKA_JMX_HOSTNAME
     value: "localhost"
   - name: KAFKA_JMX_PORT
     value: "31000"
 extraEnvVarsCM: ""
 extraEnvVarsSecret: ""
+command:
+  - /scripts/setup.sh
 args: []
 replicaCount: 1
 revisionHistoryLimit: 10
@@ -79,7 +85,6 @@ containerPorts:
   election: 3888
   adminServer: 8080
   metrics: 9141
-  jmx: 31000
 livenessProbe:
   enabled: true
   initialDelaySeconds: 30
@@ -166,7 +171,6 @@ service:
     tls: 3181
     follower: 2888
     election: 3888
-    jmx: 31000
   nodePorts:
     client: ""
     tls: ""
@@ -178,7 +182,11 @@ service:
   loadBalancerSourceRanges: []
   externalTrafficPolicy: Cluster
   annotations: {}
-  extraPorts: []
+  extraPorts:
+    - name: jmx
+      port: 31000
+      targetPort: 31000
+      protocol: TCP
   headless:
     publishNotReadyAddresses: true
     annotations: {}
@@ -210,6 +218,7 @@ persistence:
     size: 8Gi
     existingClaim: ""
     selector: {}
+  mountPath: /var/lib/zookeeper
 volumePermissions:
   enabled: false
   image:
