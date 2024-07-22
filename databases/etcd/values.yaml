@@ -68,6 +68,8 @@ removeMemberOnContainerTermination: true
 configuration: ""
 existingConfigmap: ""
 extraEnvVars:
+  - name: ALLOW_NONE_AUTHENTICATION
+    value: "yes"
   - name: ETCD_ADVERTISE_CLIENT_URLS
     value: "http://etcd:2379"
 extraEnvVarsCM: ""
@@ -130,8 +132,13 @@ startupProbe:
 customLivenessProbe: {}
 customReadinessProbe: {}
 customStartupProbe: {}
-extraVolumes: []
-extraVolumeMounts: []
+extraVolumes:
+  - name: etcd-data
+    persistentVolumeClaim:
+      claimName: etcd-pvc
+extraVolumeMounts:
+  - name: etcd-data
+    mountPath: /bitnami/etcd
 extraVolumeClaimTemplates: []
 initContainers: []
 sidecars: []
