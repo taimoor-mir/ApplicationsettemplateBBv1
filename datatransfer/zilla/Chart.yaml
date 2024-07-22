@@ -1,0 +1,27 @@
+annotations:
+  category: Streaming and messaging
+apiVersion: v2
+appVersion: 0.9.88
+description: A multi-protocol edge/service proxy for interfacing apps and services
+  to streaming data.
+home: https://github.com/aklivity/zilla
+icon: https://raw.githubusercontent.com/aklivity/zilla/develop/cloud/helm-chart/src/main/helm/zilla/logo.png
+keywords:
+- ingress
+- egress
+- mqtt
+- kafka
+- cqrs
+- rest
+- api-gateway
+- grpc
+- server-sent-events
+- streaming-api
+maintainers:
+- email: inquiry@aklivity.io
+  name: Aklivity
+name: zilla
+sources:
+- https://github.com/aklivity/zilla/tree/develop/cloud/helm-chart/src/main/helm
+type: application
+version: 0.9.88
