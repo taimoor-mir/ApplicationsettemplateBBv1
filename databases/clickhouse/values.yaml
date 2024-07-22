@@ -23,7 +23,7 @@ diagnosticMode:
 image:
   registry: docker.io
   repository: clickhouse/clickhouse-server
-  tag: 21.8.10.19
+  tag: 24.6.2-debian-12-r0
   digest: ""
   pullPolicy: IfNotPresent
   pullSecrets: []
@@ -240,7 +240,7 @@ usersExtraOverrides: ""
 usersExtraOverridesConfigmap: ""
 usersExtraOverridesSecret: ""
 initdbScripts:
-  "initdb.d": "/docker-entrypoint-initdb.d"
+  "docker-entrypoint-initdb.d": "/docker-entrypoint-initdb.d"
 initdbScriptsSecret: ""
 startdbScripts: {}
 startdbScriptsSecret: ""
@@ -271,13 +271,13 @@ lifecycleHooks: {}
 extraEnvVars: []
 extraEnvVarsCM: ""
 extraEnvVarsSecret: ""
-extraVolumes: 
+extraVolumes:
   - name: clickhouse-config
-    hostPath:
-      path: /absolute/path/to/fs/volumes/clickhouse/etc/clickhouse-server/config.d/config.xml
+    configMap:
+      name: clickhouse-config
   - name: clickhouse-users
-    hostPath:
-      path: /absolute/path/to/fs/volumes/clickhouse/etc/clickhouse-server/users.d/users.xml
+    configMap:
+      name: clickhouse-users
 extraVolumeMounts:
   - name: clickhouse-config
     mountPath: /etc/clickhouse-server/config.d/config.xml
