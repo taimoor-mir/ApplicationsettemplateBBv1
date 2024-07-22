@@ -134,8 +134,8 @@ customReadinessProbe: {}
 customStartupProbe: {}
 extraVolumes:
   - name: etcd-data
-    persistentVolumeClaim:
-      claimName: etcd-pvc
+    hostPath:
+      path: /bitnami/etcd
 extraVolumeMounts:
   - name: etcd-data
     mountPath: /bitnami/etcd
