@@ -23,7 +23,7 @@ diagnosticMode:
 image:
   registry: docker.io
   repository: clickhouse/clickhouse-server
-  tag: 24.6.2-debian-12-r0
+  tag: 21.8.10.19
   digest: ""
   pullPolicy: IfNotPresent
   pullSecrets: []
@@ -239,9 +239,8 @@ extraOverridesSecret: ""
 usersExtraOverrides: ""
 usersExtraOverridesConfigmap: ""
 usersExtraOverridesSecret: ""
-initdbScripts: 
-  config.xml: |
-  users.xml: |
+initdbScripts:
+  "initdb.d": "/docker-entrypoint-initdb.d"
 initdbScriptsSecret: ""
 startdbScripts: {}
 startdbScriptsSecret: ""
@@ -273,12 +272,19 @@ extraEnvVars: []
 extraEnvVarsCM: ""
 extraEnvVarsSecret: ""
 extraVolumes: 
-  - name: clickhouse
-    persistentVolumeClaim:
-      claimName: clickhouse
-extraVolumeMounts: 
-  - name: clickhouse
-    mountPath: /var/lib/clickhouse
+  - name: clickhouse-config
+    hostPath:
+      path: /absolute/path/to/fs/volumes/clickhouse/etc/clickhouse-server/config.d/config.xml
+  - name: clickhouse-users
+    hostPath:
+      path: /absolute/path/to/fs/volumes/clickhouse/etc/clickhouse-server/users.d/users.xml
+extraVolumeMounts:
+  - name: clickhouse-config
+    mountPath: /etc/clickhouse-server/config.d/config.xml
+    subPath: config.xml
+  - name: clickhouse-users
+    mountPath: /etc/clickhouse-server/users.d/users.xml
+    subPath: users.xml
 extraVolumeClaimTemplates: []
 sidecars: []
 initContainers: []
@@ -380,7 +386,7 @@ ingress:
   extraRules: []
 persistence:
   enabled: true
-  existingClaim: "clickhouse"
+  existingClaim: ""
   storageClass: ""
   labels: {}
   annotations: {}
